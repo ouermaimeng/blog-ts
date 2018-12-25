@@ -1,0 +1,34 @@
+.publish-article {
+  padding: 0 5%;
+  padding-top: 2%;
+  position: relative;
+  height: 100%;
+  .article-label {
+    margin: 15px 0;
+  }
+  .publish-btn {
+    position: absolute;
+    bottom: 15px;
+    right: 5%;
+  }
+  .text-body {
+    height: 100%;
+  }
+  .edit-wrap {
+    height: 500px;
+    .text-body {
+      height: 100%;
+      > div {
+        height: 100%;
+        .preview {
+          padding-left: 25px;
+          height: 100%;
+          overflow: auto;
+        }
+        textarea {
+          height: 100%;
+        }
+      }
+    }
+  }
+}

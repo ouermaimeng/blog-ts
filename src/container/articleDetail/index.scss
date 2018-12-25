@@ -1,0 +1,22 @@
+/* 
+    文章默认样式
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.article-detail {
+    h1 {
+        padding: 10px 0;
+    }
+    .article-info {
+        >div:last-child {
+            span {
+                margin-right: 20px;
+            }
+        }
+        margin-bottom: 20px;
+    }
+}
