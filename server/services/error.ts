@@ -1,12 +1,14 @@
+import { stat } from "fs";
+
 /*
  * @Author: wangcaowei
  * @Date: 2019-01-07 17:26:09
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-01-07 17:55:29
+ * @Last Modified time: 2019-01-08 17:54:27
  */
 const path = require("path");
 const log = require("log4js");
-const status = require("../config/status").status;
+import status from "../config/status";
 // 日志
 log.configure({
     appenders: {
