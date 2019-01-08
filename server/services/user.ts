@@ -5,6 +5,6 @@
  * @Last Modified time: 2019-01-07 17:17:33
  */
 export default {
-  login() {},
-  regist() {}
+    login() { },
+    regist() { }
 };

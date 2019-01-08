@@ -2,18 +2,18 @@
  * @Author: wangcaowei
  * @Date: 2017-08-18 16:56:49
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-01-07 17:28:19
+ * @Last Modified time: 2019-01-08 16:20:32
  */
-import path from "path";
-import koa from "koa";
+import * as path from "path";
+import * as koa from "koa";
+import * as session from "koa-session";
+import * as bodyParser from "koa-bodyparser";
+import * as Koastatic from "koa-static";
 import startServer from "./tool/server";
-import session from "koa-session";
-import bodyParser from "koa-bodyparser";
-import Koastatic from "koa-static";
 import errorHandler from "./services/error"
 import article from "./route/article"
 import user from "./route/user"
-const app = new koa();
+const app:koa = new koa();
 
 const staticPath = "../dist";
 app.use(Koastatic(path.join(__dirname, staticPath)));

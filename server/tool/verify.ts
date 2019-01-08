@@ -4,7 +4,7 @@
  * @Last Modified by: wangcaowei
  * @Last Modified time: 2019-01-07 17:19:07
  */
-export default{
-  validVerifyCode(){},
-  getVerifycode(){}
+export default {
+    validVerifyCode() { },
+    getVerifycode() { }
 }
