@@ -428,3 +428,17 @@ notNull Violation: articles.content cannot be null
     at Generator.next (<anonymous>)
     at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
     at <anonymous>
+[2019-04-17T14:44:28.919] [TRACE] blog - SequelizeConnectionError: Unknown database 'tet'
+    at AbstractConnectionManager.connect.Utils.Promise.tap.then.catch.err (E:\work\blog-ts\server\node_modules\sequelize\lib\dialects\mysql\connection-manager.js:149:19)
+    at tryCatcher (E:\work\blog-ts\server\node_modules\bluebird\js\release\util.js:16:23)
+    at Promise.module.exports.Promise._settlePromiseFromHandler (E:\work\blog-ts\server\node_modules\bluebird\js\release\promise.js:512:31)
+    at Promise.module.exports.Promise._settlePromise (E:\work\blog-ts\server\node_modules\bluebird\js\release\promise.js:569:18)
+    at Promise.module.exports.Promise._settlePromise0 (E:\work\blog-ts\server\node_modules\bluebird\js\release\promise.js:614:10)
+    at Promise.module.exports.Promise._settlePromises (E:\work\blog-ts\server\node_modules\bluebird\js\release\promise.js:690:18)
+    at _drainQueueStep (E:\work\blog-ts\server\node_modules\bluebird\js\release\async.js:138:12)
+    at _drainQueue (E:\work\blog-ts\server\node_modules\bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (E:\work\blog-ts\server\node_modules\bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues (E:\work\blog-ts\server\node_modules\bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:810:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
