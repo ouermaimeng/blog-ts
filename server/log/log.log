@@ -1,0 +1,430 @@
+[2019-01-14T17:45:37.709] [TRACE] blog - SequelizeValidationError: notNull Violation: articles.title cannot be null,
+notNull Violation: articles.content cannot be null
+    at _validate.Promise.all.then (E:\work\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\instance-validator.js:74:15)
+    at tryCatcher (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\util.js:16:23)
+    at Promise.module.exports.Promise._settlePromiseFromHandler (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:512:31)
+    at Promise.module.exports.Promise._settlePromise (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:569:18)
+    at Promise.module.exports.Promise._settlePromise0 (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:614:10)
+    at Promise.module.exports.Promise._settlePromises (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:694:18)
+    at Promise.module.exports.Promise._fulfill (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:638:18)
+    at PromiseArray.module.exports.PromiseArray._resolve (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise_array.js:126:19)
+    at PromiseArray.module.exports.PromiseArray._promiseFulfilled (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise_array.js:144:14)
+    at Promise.module.exports.Promise._settlePromise (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:574:26)
+    at Promise.module.exports.Promise._settlePromise0 (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:614:10)
+    at Promise.module.exports.Promise._settlePromises (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\async.js:138:12)
+    at _drainQueue (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:810:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+[2019-01-14T17:47:39.505] [TRACE] blog - SequelizeValidationError: notNull Violation: articles.title cannot be null,
+notNull Violation: articles.content cannot be null
+    at _validate.Promise.all.then (E:\work\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\instance-validator.js:74:15)
+    at tryCatcher (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\util.js:16:23)
+    at Promise.module.exports.Promise._settlePromiseFromHandler (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:512:31)
+    at Promise.module.exports.Promise._settlePromise (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:569:18)
+    at Promise.module.exports.Promise._settlePromise0 (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:614:10)
+    at Promise.module.exports.Promise._settlePromises (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:694:18)
+    at Promise.module.exports.Promise._fulfill (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:638:18)
+    at PromiseArray.module.exports.PromiseArray._resolve (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise_array.js:126:19)
+    at PromiseArray.module.exports.PromiseArray._promiseFulfilled (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise_array.js:144:14)
+    at Promise.module.exports.Promise._settlePromise (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:574:26)
+    at Promise.module.exports.Promise._settlePromise0 (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:614:10)
+    at Promise.module.exports.Promise._settlePromises (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\promise.js:694:18)
+    at _drainQueueStep (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\async.js:138:12)
+    at _drainQueue (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\async.js:131:9)
+    at Async._drainQueues (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\async.js:147:5)
+    at Immediate.Async.drainQueues (E:\work\ts\server\node_modules\_bluebird@3.5.3@bluebird\js\release\async.js:17:14)
+    at runCallback (timers.js:810:20)
+    at tryOnImmediate (timers.js:768:5)
+    at processImmediate [as _immediateCallback] (timers.js:745:5)
+[2019-01-15T14:29:30.072] [TRACE] blog - TypeError: Cannot read property 'create' of undefined
+    at Object.<anonymous> (E:\work\ts\server\services\verify.ts:12:36)
+    at Generator.next (<anonymous>)
+    at __awaiter (E:\work\ts\server\services\verify.ts:7:71)
+    at new Promise (<anonymous>)
+    at __awaiter (E:\work\ts\server\services\verify.ts:3:12)
+    at Object.getVerifycode (E:\work\ts\server\services\verify.ts:15:16)
+    at E:\work\ts\server\controllers\verify.ts:12:38
+    at Generator.next (<anonymous>)
+    at __awaiter (E:\work\ts\server\controllers\verify.ts:7:71)
+    at new Promise (<anonymous>)
+    at __awaiter (E:\work\ts\server\controllers\verify.ts:3:12)
+    at getVerifycode (E:\work\ts\server\controllers\verify.ts:15:16)
+    at dispatch (E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at E:\work\ts\server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (E:\work\ts\server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
+    at dispatch (E:\work\ts\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at bodyParser (E:\work\ts\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:11)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+[2019-01-15T14:29:39.865] [TRACE] blog - TypeError: Cannot read property 'create' of undefined
+    at Object.<anonymous> (E:\work\ts\server\services\verify.ts:12:36)
+    at Generator.next (<anonymous>)
+    at __awaiter (E:\work\ts\server\services\verify.ts:7:71)
+    at new Promise (<anonymous>)
+    at __awaiter (E:\work\ts\server\services\verify.ts:3:12)
+    at Object.getVerifycode (E:\work\ts\server\services\verify.ts:15:16)
+    at E:\work\ts\server\controllers\verify.ts:12:38
+    at Generator.next (<anonymous>)
+    at __awaiter (E:\work\ts\server\controllers\verify.ts:7:71)
+    at new Promise (<anonymous>)
+    at __awaiter (E:\work\ts\server\controllers\verify.ts:3:12)
+    at getVerifycode (E:\work\ts\server\controllers\verify.ts:15:16)
+    at dispatch (E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at E:\work\ts\server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (E:\work\ts\server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
+    at dispatch (E:\work\ts\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at bodyParser (E:\work\ts\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:11)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+[2019-01-15T14:35:59.662] [TRACE] blog - TypeError: Cannot read property 'create' of undefined
+    at Object.<anonymous> (E:\work\ts\server\services\verify.ts:12:36)
+    at Generator.next (<anonymous>)
+    at __awaiter (E:\work\ts\server\services\verify.ts:7:71)
+    at new Promise (<anonymous>)
+    at __awaiter (E:\work\ts\server\services\verify.ts:3:12)
+    at Object.getVerifycode (E:\work\ts\server\services\verify.ts:15:16)
+    at E:\work\ts\server\controllers\verify.ts:12:38
+    at Generator.next (<anonymous>)
+    at __awaiter (E:\work\ts\server\controllers\verify.ts:7:71)
+    at new Promise (<anonymous>)
+    at __awaiter (E:\work\ts\server\controllers\verify.ts:3:12)
+    at getVerifycode (E:\work\ts\server\controllers\verify.ts:15:16)
+    at dispatch (E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at next (E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:45:18)
+    at E:\work\ts\server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:346:16
+    at dispatch (E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:44:32)
+    at E:\work\ts\server\node_modules\_koa-compose@3.2.1@koa-compose\index.js:36:12
+    at dispatch (E:\work\ts\server\node_modules\_koa-router@7.4.0@koa-router\lib\router.js:351:31)
+    at dispatch (E:\work\ts\server\node_modules\_koa-compose@4.1.0@koa-compose\index.js:42:32)
+    at bodyParser (E:\work\ts\server\node_modules\_koa-bodyparser@4.2.1@koa-bodyparser\index.js:86:11)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+[2019-01-15T17:41:40.902] [TRACE] blog - TypeError: Cannot read property 'wrong' of undefined
+    at E:\work\ts\server\controllers\verify.ts:23:41
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\ts\server\controllers\verify.ts:4:58)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+[2019-01-15T17:43:56.329] [TRACE] blog - TypeError: Cannot read property 'wrong' of undefined
+    at E:\work\ts\server\controllers\verify.ts:23:41
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\ts\server\controllers\verify.ts:4:58)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+[2019-01-15T17:44:27.210] [TRACE] blog - TypeError: Cannot read property 'wrong' of undefined
+    at E:\work\ts\server\controllers\verify.ts:23:41
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\ts\server\controllers\verify.ts:4:58)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+[2019-01-15T21:37:00.848] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T21:37:31.762] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T21:37:46.759] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T21:38:20.216] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T21:38:46.531] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T21:39:49.884] [TRACE] blog - TypeError: Cannot read property 'wrong' of undefined
+    at E:\workplace\ts\server\controllers\verify.ts:23:41
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\workplace\ts\server\controllers\verify.ts:4:58)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2019-01-15T21:42:02.032] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T21:42:40.395] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T21:44:05.837] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T21:52:50.855] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T21:53:38.901] [TRACE] blog - TypeError: Cannot read property 'wrong' of undefined
+    at E:\workplace\ts\server\controllers\verify.ts:23:41
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\workplace\ts\server\controllers\verify.ts:4:58)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2019-01-15T21:54:03.161] [TRACE] blog - TypeError: Cannot read property 'wrong' of undefined
+    at E:\workplace\ts\server\controllers\verify.ts:23:41
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\workplace\ts\server\controllers\verify.ts:4:58)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2019-01-15T21:56:10.566] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T21:59:09.646] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T21:59:43.066] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T22:00:10.926] [TRACE] blog - SequelizeDatabaseError: Unknown column 'canwrite' in 'field list'
+    at Query.formatError (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:247:16)
+    at Query.handler [as onResult] (E:\workplace\ts\server\node_modules\_sequelize@4.42.0@sequelize\lib\dialects\mysql\query.js:68:23)
+    at Query.execute (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\commands\command.js:30:14)
+    at Connection.handlePacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:455:32)
+    at PacketParser.onPacket (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:73:18)
+    at PacketParser.executeStart (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\packet_parser.js:75:16)
+    at Socket.<anonymous> (E:\workplace\ts\server\node_modules\_mysql2@1.6.4@mysql2\lib\connection.js:80:31)
+    at emitOne (events.js:115:13)
+    at Socket.emit (events.js:210:7)
+    at addChunk (_stream_readable.js:264:12)
+    at readableAddChunk (_stream_readable.js:251:11)
+    at Socket.Readable.push (_stream_readable.js:209:10)
+    at TCP.onread (net.js:587:20)
+[2019-01-15T22:11:14.968] [TRACE] blog - Error: Expected "payload" to be a plain object.
+    at validate (E:\workplace\ts\server\node_modules\_jsonwebtoken@8.4.0@jsonwebtoken\sign.js:34:11)
+    at validatePayload (E:\workplace\ts\server\node_modules\_jsonwebtoken@8.4.0@jsonwebtoken\sign.js:56:10)
+    at Object.module.exports [as sign] (E:\workplace\ts\server\node_modules\_jsonwebtoken@8.4.0@jsonwebtoken\sign.js:108:7)
+    at Object.exports.createToken (E:\workplace\ts\server\services\token.ts:12:18)
+    at Object.<anonymous> (E:\workplace\ts\server\services\user.ts:29:24)
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\workplace\ts\server\services\user.ts:4:58)
+    at <anonymous>
+[2019-01-15T22:19:12.197] [TRACE] blog - TypeError: Cannot read property 'wrong' of undefined
+    at E:\workplace\ts\server\controllers\verify.ts:23:41
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\workplace\ts\server\controllers\verify.ts:4:58)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:188:7)
+[2019-02-25T15:49:43.804] [TRACE] blog - undefined
+[2019-02-25T15:50:07.163] [TRACE] blog - undefined
+[2019-02-25T15:51:02.038] [TRACE] blog - undefined
+[2019-02-25T15:51:19.958] [TRACE] blog - undefined
+[2019-02-25T15:51:30.149] [TRACE] blog - undefined
+[2019-02-25T15:53:42.187] [TRACE] blog - undefined
+[2019-02-25T18:07:35.352] [TRACE] blog - undefined
+[2019-02-25T18:10:52.744] [TRACE] blog - undefined
+[2019-02-25T18:14:00.119] [TRACE] blog - undefined
+[2019-02-25T18:14:28.237] [TRACE] blog - undefined
+[2019-02-25T18:15:46.986] [TRACE] blog - undefined
+[2019-02-25T18:18:18.337] [TRACE] blog - undefined
+[2019-02-25T18:18:55.020] [TRACE] blog - undefined
+[2019-02-25T18:20:06.645] [TRACE] blog - undefined
+[2019-02-25T18:20:53.910] [TRACE] blog - Error: 没有权限
+    at Object.<anonymous> (E:\work\123\server\services\article.ts:150:19)
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\services\article.ts:4:58)
+    at <anonymous>
+[2019-02-25T18:21:02.089] [TRACE] blog - Error: 没有权限
+    at Object.<anonymous> (E:\work\123\server\services\article.ts:150:19)
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\services\article.ts:4:58)
+    at <anonymous>
+[2019-02-25T18:22:40.197] [TRACE] blog - Error: 未登录
+    at E:\work\123\server\tool\middleware.ts:24:19
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+[2019-02-25T18:27:15.338] [TRACE] blog - Error: 未登录
+    at E:\work\123\server\tool\middleware.ts:24:19
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
+    at <anonymous>
+    at process._tickCallback (internal/process/next_tick.js:189:7)
+[2019-02-25T18:27:37.705] [TRACE] blog - Error: 没有权限
+    at Object.<anonymous> (E:\work\123\server\services\article.ts:150:19)
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\services\article.ts:4:58)
+    at <anonymous>
+[2019-02-25T18:54:34.831] [TRACE] blog - Error: 没有对应权限
+    at E:\work\123\server\tool\middleware.ts:34:19
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
+    at <anonymous>
+[2019-02-25T18:54:53.495] [TRACE] blog - Error: 没有对应权限
+    at E:\work\123\server\tool\middleware.ts:34:19
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
+    at <anonymous>
+[2019-02-25T18:54:54.000] [TRACE] blog - Error: 没有对应权限
+    at E:\work\123\server\tool\middleware.ts:34:19
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
+    at <anonymous>
+[2019-02-25T18:54:54.238] [TRACE] blog - Error: 没有对应权限
+    at E:\work\123\server\tool\middleware.ts:34:19
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
+    at <anonymous>
+[2019-02-25T18:54:54.657] [TRACE] blog - Error: 没有对应权限
+    at E:\work\123\server\tool\middleware.ts:34:19
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
+    at <anonymous>
+[2019-02-25T18:54:54.667] [TRACE] blog - Error: 没有对应权限
+    at E:\work\123\server\tool\middleware.ts:34:19
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
+    at <anonymous>
+[2019-02-25T18:54:54.714] [TRACE] blog - Error: 没有对应权限
+    at E:\work\123\server\tool\middleware.ts:34:19
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
+    at <anonymous>
+[2019-02-25T18:54:55.063] [TRACE] blog - Error: 没有对应权限
+    at E:\work\123\server\tool\middleware.ts:34:19
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
+    at <anonymous>
+[2019-02-25T19:19:25.071] [TRACE] blog - Error: 没有对应权限
+    at E:\work\123\server\tool\middleware.ts:34:19
+    at Generator.next (<anonymous>)
+    at fulfilled (E:\work\123\server\tool\middleware.ts:10:58)
+    at <anonymous>

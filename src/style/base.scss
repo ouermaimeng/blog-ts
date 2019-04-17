@@ -1,0 +1,98 @@
+@import "./variable.scss";
+.blog-flex {
+    display: flex;
+}
+
+.blog-flex-x-center {
+    justify-content: center;
+}
+
+.blog-flex-y-center {
+    align-items: center;
+}
+
+.blog-flex-justify {
+    justify-content: space-between;
+}
+
+.blog-flex-row-y {
+    flex-direction: column;
+}
+
+.blog-flex-1 {
+    flex: 1;
+}
+
+body,
+html {
+    height: 100%;
+    >#root {
+        height: 100%;
+        .index-root {
+            height: 100%;
+            position: relative;
+        }
+        .content, 
+        .header,
+        .sider {
+            background-color: $bgColor;
+        }
+        .sider {
+            border-right: 1px solid $borderColor;
+            box-shadow: 1px;
+            background-image: url("../static/images/bg.jpg");
+            background-size: cover;
+            .ant-layout-sider-children {
+                display: flex;
+            }
+            .left-nav {
+                text-align: center;
+                color: white;
+                >img {
+                    width: 300px;
+                    height: 300px;
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                >* {
+                    font-size: 24px;
+                    text-align: center;
+                }
+                >a {
+                    margin: 10px 0;
+                    color: white;
+                    letter-spacing: 8px;
+                }
+            }
+        }
+        .right {
+            .header {
+                width: 100%;
+            }
+            background-color: white;
+            overflow-y: auto;
+            .content {
+                padding-top: 40px;
+                width: 80%;
+            }
+        }
+    }
+}
+
+// 省略显示省略号
+.blog-overflow-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// 显示两行文字，溢出隐藏
+.blog-two-overflow-ellipsis {
+    display: -webkit-box;
+    display: -moz-box;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-all;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}

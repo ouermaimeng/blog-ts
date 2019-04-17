@@ -1,0 +1,33 @@
+@import "../../style/variable.scss";
+.article {
+    width: 80%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: $content-font-size;
+    display: inline-block;
+    .article-title {
+        cursor: pointer;
+        padding: 10px;
+        font-size: $title-font-size;
+        border-bottom: 1px solid $borderColor;
+        letter-spacing: 3px;
+        margin-bottom: 5px;
+        &:hover {
+            color: $title-active;
+        }
+    }
+    .article-content {
+        div:nth-of-type(1) {
+            margin: 10px 0;
+            padding: 0 10px;
+            max-height: 150px;
+        }
+    }
+    .article-tag {
+        padding-left: 10px;
+    }
+    .article-info {
+        padding: 0 15% 0 5%;
+    }
+}

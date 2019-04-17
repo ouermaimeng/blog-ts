@@ -1,0 +1,30 @@
+{
+    "compilerOptions": {
+        "target": "ES2015",
+        "module": "commonjs",
+        "outDir": "./dist",
+        "rootDir": "../",
+        "lib": ["es2015", "dom"],
+        "allowSyntheticDefaultImports": true,
+        "typeRoots": ["/node_modules/@types", "koa-bodyparser"],
+        "strict": true,
+        "strictBindCallApply": false,  
+        "emitDecoratorMetadata": true, // 开启修饰器
+        "experimentalDecorators": true, // 开启修饰器
+        "noImplicitAny": true,
+        "sourceMap": true,
+        // "esModuleInterop":true,
+        "types": []
+    },
+    // "include": [
+    //     "config/**/*",
+    //     "db/**/*",
+    //     "models/**/*",
+    //     "route/**/*",
+    //     "services/**/*",
+    //     "start/**/*",
+    //     "tool/**/*",
+    //     "app.ts"
+    // ],
+    "exclude": ["node_modules", "dist","log"]
+}
