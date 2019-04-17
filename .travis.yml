@@ -22,6 +22,7 @@ after_success:
 - chmod 600 ~/.ssh/id_rsa
 - ssh root@107.182.188.188 -p 12306 -o StrictHostKeyChecking=no "cd /var/ftp/public_root/blog-fe/blog-ts/
   && git pull origin master
+  && yarn install
   && yarn run build
   && cp -r /var/ftp/public_root/blog-fe/blog-ts/dist /var/ftp/public_root/blog/dist
   && pm2 restart app"
