@@ -26,6 +26,7 @@ after_success:
   && cnpm run build
   && cp -r /var/ftp/public_root/blog-fe/blog-ts/build /var/ftp/public_root/blog/dist
   && cp -r /var/ftp/public_root/blog-fe/blog-ts/server /var/ftp/public_root/blog/server
+  && cp -r /var/ftp/public_root/blog-fe/blog-ts/interface /var/ftp/public_root/blog/interface
   && cd /var/ftp/public_root/blog/server
   && cnpm install
   && tsc
