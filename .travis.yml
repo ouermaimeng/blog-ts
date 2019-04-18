@@ -28,4 +28,5 @@ after_success:
   && cp -r /var/ftp/public_root/blog-fe/blog-ts/server /var/ftp/public_root/blog/server
   && cd /var/ftp/public_root/blog/server
   && cnpm install
-  && pm2 restart app"
+  && tsc
+  && pm2 start ./dist/server/app"
