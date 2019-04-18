@@ -24,7 +24,7 @@ after_success:
   && git pull origin master
   && cnpm install
   && cnpm run build
-  && cp -r /var/ftp/public_root/blog-fe/blog-ts/dist /var/ftp/public_root/blog/dist
+  && cp -r /var/ftp/public_root/blog-fe/blog-ts/build /var/ftp/public_root/blog/dist
   && cp -r /var/ftp/public_root/blog-fe/blog-ts/server /var/ftp/public_root/blog/server
   && cd /var/ftp/public_root/blog/server
   && cnpm install
