@@ -2,9 +2,8 @@
  * @Author: wangcaowei
  * @Date: 2019-01-07 16:52:55
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-04-19 14:32:52
+ * @Last Modified time: 2019-04-19 14:50:08
  */
-import * as path from "path";
 import sequelize from "../db/db";
 import * as dbDef from "../models/db";
 import {
