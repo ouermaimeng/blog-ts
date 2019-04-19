@@ -30,4 +30,4 @@ after_success:
   && cd /var/ftp/public_root/blog/server
   && cnpm install
   && tsc
-  && pm2 start ./dist/server/app"
+  && pm2 start ./dist/server/app.js"
