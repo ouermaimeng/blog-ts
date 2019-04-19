@@ -2,7 +2,7 @@
  * @Author: wangcaowei
  * @Date: 2019-01-07 17:16:13
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-04-19 15:17:25
+ * @Last Modified time: 2019-04-19 16:17:11
  */
 import * as path from "path";
 import * as bcrypt from "bcrypt";
@@ -28,3 +28,12 @@ export const matchUserAndPwd = async (
     if (!isEqual) return false;
     return res;
 };
+
+/**
+ * @description 是.ts文件还是.js文件
+ * @returns ture:.ts false:.js
+ */
+export const isTsFile = (): Boolean => {
+    const fileSuffix = __filename.split(".").slice(-1)[0];
+    return fileSuffix == "ts" ? true : false;
+}

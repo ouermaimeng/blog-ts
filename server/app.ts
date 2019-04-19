@@ -2,7 +2,7 @@
  * @Author: wangcaowei
  * @Date: 2017-08-18 16:56:49
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-02-18 15:15:22
+ * @Last Modified time: 2019-04-19 16:17:18
  */
 import * as path from "path";
 import * as koa from "koa";
@@ -13,9 +13,9 @@ import startServer from "./tool/server";
 import errorHandler from "./services/error"
 import article from "./route/article"
 import user from "./route/user"
-const app:koa = new koa();
-
-const staticPath = "../dist";
+import { isTsFile } from "./tool/utils"
+const app: koa = new koa();
+const staticPath = isTsFile() ? "../build" : "../../../build";
 app.use(Koastatic(path.join(__dirname, staticPath)));
 app.keys = ["ouermaimeng"];
 app.use(
