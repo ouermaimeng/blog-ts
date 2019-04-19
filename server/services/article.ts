@@ -2,7 +2,7 @@
  * @Author: wangcaowei
  * @Date: 2019-01-07 16:52:55
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-02-25 19:40:49
+ * @Last Modified time: 2019-04-19 14:32:52
  */
 import * as path from "path";
 import sequelize from "../db/db";
@@ -12,15 +12,10 @@ import {
     DeleteArticle
 } from "../../interface/interface";
 import { matchUserAndPwd } from "../tool/utils";
-const articles: dbDef.articlesModel = sequelize.import(
-    path.join(__dirname, "../models/articles.ts")
-);
-const tags: dbDef.tagsModel = sequelize.import(
-    path.join(__dirname, "../models/tags.ts")
-);
-const articletagrelate: dbDef.articletagrelateModel = sequelize.import(
-    path.join(__dirname, "../models/articletagrelate.ts")
-);
+const articles: dbDef.articlesModel = sequelize.import("../models/articles");
+const tags: dbDef.tagsModel = sequelize.import("../models/tags")
+
+const articletagrelate: dbDef.articletagrelateModel = sequelize.import("../models/articletagrelate")
 
 /**
  * @description 更新文章

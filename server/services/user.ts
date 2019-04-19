@@ -2,7 +2,7 @@
  * @Author: wangcaowei
  * @Date: 2019-01-07 16:53:01
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-02-25 11:23:00
+ * @Last Modified time: 2019-04-19 14:33:17
  */
 import * as path from "path";
 import * as bcrypt from "bcrypt";
@@ -11,9 +11,7 @@ import { LoginOrRegist, UserInfo } from "../../interface/interface";
 import { matchUserAndPwd } from "../tool/utils";
 import { createToken } from "./token";
 import * as dbDef from "../models/db";
-const user: dbDef.usersModel = sequelize.import(
-    path.join(__dirname, "../models/users.ts")
-);
+const user: dbDef.usersModel = sequelize.import("../models/users");
 export default {
     //登录
     async login(params: LoginOrRegist): Promise<UserInfo> {
