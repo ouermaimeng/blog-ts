@@ -2,11 +2,11 @@
  * @Author: wangcaowei
  * @Date: 2018-12-29 15:25:25
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-04-17 14:48:41
+ * @Last Modified time: 2019-04-22 10:32:19
  */
 
 exports.databaseConf= {
-    host : "localhost",
+    host : "107.182.188.188",
     user : "root",
     password : "cvosolli123",
     database : "koatest"

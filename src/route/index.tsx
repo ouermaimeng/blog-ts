@@ -2,11 +2,11 @@
  * @Author: wangcaowei
  * @Date: 2018-02-07 18:32:16
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-02-15 11:07:11
+ * @Last Modified time: 2019-04-22 10:28:18
  */
 import * as React from "react";
 import * as ReactCSSTransitionGroup from "react-addons-css-transition-group";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import asyncComponent from "../bundle.js";
 
 const Index = asyncComponent(() => import("../container/index/index"));
