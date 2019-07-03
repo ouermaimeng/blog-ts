@@ -1,7 +1,6 @@
 {
   "name": "123",
   "version": "0.1.0",
-  "private": true,
   "dependencies": {
     "@babel/core": "7.2.2",
     "@svgr/webpack": "4.1.0",
@@ -10,6 +9,8 @@
     "@types/node": "^11.9.3",
     "@types/react": "16.8.3",
     "@types/react-dom": "16.8.1",
+    "@types/redux": "^3.6.0",
+    "@types/redux-thunk": "^2.1.0",
     "antd": "^3.13.2",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "9.0.0",
@@ -53,6 +54,7 @@
     "postcss-safe-parser": "4.0.1",
     "qs": "^6.6.0",
     "react": "^16.8.1",
+    "react-addons-css-transition-group": "^15.6.2",
     "react-app-polyfill": "^0.2.1",
     "react-dev-utils": "^7.0.3",
     "react-dom": "^16.8.1",
@@ -91,10 +93,10 @@
   ],
   "devDependencies": {
     "@types/highlight.js": "^9.12.3",
-    "@types/markdown-it": "^0.0.7",
-    "@types/qs": "^6.5.1",
+    "@types/markdown-it": "^0.0.8",
+    "@types/qs": "^6.5.3",
     "@types/react-addons-css-transition-group": "^15.0.5",
-    "@types/react-redux": "^7.0.1",
+    "@types/react-redux": "^7.1.1",
     "@types/react-router-dom": "^4.3.1"
   },
   "jest": {
@@ -147,5 +149,5 @@
       "react-app"
     ]
   },
-  "proxy": "http://192.168.0.146:80/"
+  "proxy": "http://192.168.6.252:80/"
 }
