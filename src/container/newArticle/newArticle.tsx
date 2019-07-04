@@ -2,13 +2,18 @@
  * @Author: wangcaowei
  * @Date: 2017-08-18 16:58:14
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-03 17:31:19
+ * @Last Modified time: 2019-07-04 14:03:39
  */
 import * as React from "react";
 import { ChangeEvent, MouseEvent } from "react";
 import { connect } from "react-redux";
 import { Row, Col, Input, Button, Select } from "antd";
-import { publishArticle, getTagList } from "../../actions/action";
+import * as qs from "qs";
+import {
+  publishArticle,
+  getTagList,
+  getArticleById
+} from "../../actions/action";
 import md from "../../config/markdownConfig";
 import { History } from "history";
 import {
@@ -26,7 +31,8 @@ interface Props {
   history: History;
   tagList: TagsAttribute[];
   userInfo: UserInfo;
-  getTagList: () => void;
+  getTagList: () => Promise<any>;
+  getArticleById: (id: number) => Promise<any>;
 }
 interface States {
   id: number | string;
@@ -54,10 +60,17 @@ class NewArticle extends React.Component<Props, States> {
     };
   }
   componentDidMount() {
-    const { state } = this.props.history.location;
-    !this.props.tagList.length && this.props.getTagList();
-    state && state.edit && this.textareaChange(state.article.content);
+    const { history, tagList, getTagList } = this.props;
+    const { search } = history.location;
+    const parseSearch = qs.parse(search);
+    !tagList.length && getTagList();
+
+    parseSearch && this.initByEdit(parseSearch.id);
   }
+  initByEdit = async (id: number): Promise<void> => {
+    const res = await this.props.getArticleById(id);
+    console.log(res.a);
+  };
   // 编辑状态e为string 否则为event
   titleChange = (e: ChangeEvent<HTMLInputElement> | string) => {
     let title = typeof e === "string" ? e : e.target.value;
@@ -175,7 +188,8 @@ const mapStateToProps = (state: {
 };
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
-    getTagList: () => dispatch(getTagList())
+    getTagList: (): Promise<[]> => dispatch(getTagList()),
+    getArticleById: (id: number): Promise<any> => dispatch(getArticleById(id))
   };
 };
 export default connect(

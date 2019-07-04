@@ -2,7 +2,7 @@
  * @Author: wangcaowei
  * @Date: 2018-02-07 17:37:39
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-03 17:27:27
+ * @Last Modified time: 2019-07-04 10:10:18
  */
 import * as React from "react";
 import { connect } from "react-redux";
@@ -57,8 +57,7 @@ class ArticleDetail extends React.Component<Props, {}> {
     history.push({
       pathname: "/write-article",
       search: qs.stringify({
-        article: article.id,
-        edit: true
+        article: article.id
       })
     });
   };

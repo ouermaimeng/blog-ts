@@ -4,17 +4,18 @@
  * @Last Modified by: wangcaowei
  * @Last Modified time: 2019-02-13 17:25:53
  */
+import { connectRouter } from "connected-react-router";
+import { combineReducers } from "redux";
+import { History } from "history";
 import user from "./login";
 import article from "./article";
 import publishArticle from "./publishArticle";
 import del from "./delete";
-import { combineReducers } from "redux";
-import { connectRouter } from "connected-react-router";
-export default (history: any) =>
-    combineReducers({
-        router: connectRouter(history),
-        user,
-        article,
-        publishArticle,
-        del
-    });
+export default (history: History) =>
+  combineReducers({
+    router: connectRouter(history),
+    user,
+    article,
+    publishArticle,
+    del
+  });

@@ -5,7 +5,7 @@
  * @Last Modified time: 2019-07-03 16:00:34
  */
 import api from "../config/api";
-import type from "./type";
+import * as actionCreators from "./actionCreator";
 import * as qs from "qs";
 import { Dispatch } from "redux";
 import request from "../request";
@@ -34,10 +34,7 @@ export const getArticleList = (tagId?: number): any => {
       method: "post",
       body: qs.stringify({ tagId })
     }).then(data => {
-      dispatch({
-        type: type.GET_ALL_LIST,
-        articleList: data.content
-      });
+      dispatch(actionCreators.getArticleList(data.content));
     });
   };
 };
@@ -51,7 +48,7 @@ export const getArticleList = (tagId?: number): any => {
 export const getTagList = (): any => {
   return (dispatch: Dispatch): Promise<any> => {
     return request(api.getTagList).then(data => {
-      dispatch({ type: type.GET_TAG_LIST, tagList: data.content });
+      dispatch(actionCreators.getTagList(data.content));
     });
   };
 };
@@ -62,20 +59,17 @@ export const getTagList = (): any => {
  * @param
  * @returns
  */
-
 export const getArticleById = (id: number): any => {
   return (dispatch: Dispatch) => {
     request(api.getArticleById, {
       method: "post",
       body: qs.stringify({ id })
     }).then(data => {
-      dispatch({
-        type: type.GET_ARTICLE_BY_ID,
-        currentArticle: data.content[0]
-      });
+      dispatch(actionCreators.getArticleById(data.content[0]));
     });
   };
 };
+
 /**
  * @description 根据tagid获取列表
  */
@@ -85,23 +79,11 @@ export const getArticleByTag = (id: number): any => {
       method: "post",
       body: qs.stringify({ id })
     }).then(data => {
-      dispatch({
-        type: type.GET_ALL_LIST,
-        articleList: data.content
-      });
+      dispatch(actionCreators.getArticleList(data.content));
     });
   };
 };
-/**
- * 显示隐藏login
- * @param
- * @returns
- */
 
-export const showLogin = (currentStatus: boolean) => ({
-  type: type.SHOW_LOGIN,
-  status: currentStatus
-});
 /**
  * 检查用户名是否已经被注册
  *
@@ -114,6 +96,7 @@ export const checkRegist = (username: string) => {
     body: qs.stringify({ username })
   });
 };
+
 /**
  * 用户注册
  * @param
@@ -125,15 +108,7 @@ export const regist = (userInfo: any) => {
     body: qs.stringify(userInfo)
   });
 };
-/**
- * 保存用户登录后的信息
- *
- * @param {any} userInfo
- */
-export const saveUserInfo = (username: string | null) => ({
-  type: type.SAVE_USER_INFO,
-  user: username
-});
+
 /**
  * 登录
  *
@@ -146,21 +121,23 @@ export const login = (userInfo: any): any => {
       method: "POST",
       body: qs.stringify(userInfo)
     }).then(data => {
-      dispatch(saveUserInfo(data.content));
+      dispatch(actionCreators.saveUserInfo(data.content));
       localStorage.setItem("token", data.content.token);
       return data;
     });
   };
 };
+
 /**
  * 用户登出
  */
 export const logOut = (): any => {
   localStorage.removeItem("token");
   return (dispatch: Dispatch) => {
-    dispatch(saveUserInfo(null));
+    dispatch(actionCreators.saveUserInfo(null));
   };
 };
+
 /**
  * 获取验证码
  *
@@ -184,17 +161,14 @@ export const showDelete = (id?: number): any => {
     }
   };
 };
+
 /**
  * @function 删除指定文章
  * @param {*} username 用户名
  * @param {*} password 密码
  * @param {*} id 文章id
  */
-export const deleteArticle = (
-  username: string,
-  password: string,
-  id: number
-): any => {
+export const deleteArticle = (username: string, password: string, id: number): any => {
   const data = { username, password, id };
   return request(api.deleteArticle, {
     method: "POST",
