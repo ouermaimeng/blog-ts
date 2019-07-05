@@ -2,12 +2,12 @@
  * @Author: wangcaowei
  * @Date: 2017-08-18 12:58:58
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-05 11:42:24
+ * @Last Modified time: 2019-07-05 17:33:13
  */
 import api from "../config/api";
 import * as actionCreators from "./actionCreator";
 import * as qs from "qs";
-import { Dispatch } from "redux";
+import { ThunkAction, ThunkDispatch } from "redux-thunk";
 import request from "../request";
 import * as interfaces from "../../interface/interface";
 /**
@@ -29,7 +29,7 @@ export const publishArticle = (article: interfaces.InsertArticle) => {
  * @returns
  */
 export const getArticleList = (tagId?: number): any => {
-  return (dispatch: Dispatch) => {
+  return (dispatch: ThunkDispatch) => {
     request(api.getArticleList, {
       method: "post",
       body: qs.stringify({ tagId })
@@ -46,7 +46,7 @@ export const getArticleList = (tagId?: number): any => {
  * @returns
  */
 export const getTagList = (): any => {
-  return (dispatch: Dispatch): Promise<any> => {
+  return (dispatch: ThunkDispatch): Promise<any> => {
     return request(api.getTagList).then(data => {
       dispatch(actionCreators.getTagList(data.content));
     });
