@@ -2,21 +2,21 @@
  * @Author: wangcaowei
  * @Date: 2017-08-18 12:58:58
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-03 16:00:34
+ * @Last Modified time: 2019-07-05 11:42:24
  */
 import api from "../config/api";
 import * as actionCreators from "./actionCreator";
 import * as qs from "qs";
 import { Dispatch } from "redux";
 import request from "../request";
-
+import * as interfaces from "../../interface/interface";
 /**
  *
  * 发表文章
- * @param {any} article 文章内容
+ * @param {interfaces.InsertArticle} article 文章内容
  * @returns
  */
-export const publishArticle = (article: any) => {
+export const publishArticle = (article: interfaces.InsertArticle) => {
   return request(api.publishArticle, {
     method: "post",
     body: qs.stringify(article)

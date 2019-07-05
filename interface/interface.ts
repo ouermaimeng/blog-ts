@@ -2,12 +2,16 @@
  * @Author: wangcaowei
  * @Date: 2019-01-23 16:26:35
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-04 15:38:30
+ * @Last Modified time: 2019-07-05 11:40:31
  */
+
 import status from "../server/config/status";
+
 //  response of interface
-interface response {
+export interface Response<T> {
   readonly status: status;
+  content?: T | null;
+  msg?: string;
 }
 // table: articles
 export interface ArticlesAttribute {
