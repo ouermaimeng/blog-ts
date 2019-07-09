@@ -2,12 +2,11 @@
  * @Author: wangcaowei
  * @Date: 2017-08-18 12:58:58
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-05 17:33:13
+ * @Last Modified time: 2019-07-09 14:50:04
  */
 import api from "../config/api";
 import * as actionCreators from "./actionCreator";
 import * as qs from "qs";
-import { ThunkAction, ThunkDispatch } from "redux-thunk";
 import request from "../request";
 import * as interfaces from "../../interface/interface";
 /**
@@ -29,7 +28,7 @@ export const publishArticle = (article: interfaces.InsertArticle) => {
  * @returns
  */
 export const getArticleList = (tagId?: number): any => {
-  return (dispatch: ThunkDispatch) => {
+  return (dispatch: any) => {
     request(api.getArticleList, {
       method: "post",
       body: qs.stringify({ tagId })
@@ -46,7 +45,7 @@ export const getArticleList = (tagId?: number): any => {
  * @returns
  */
 export const getTagList = (): any => {
-  return (dispatch: ThunkDispatch): Promise<any> => {
+  return (dispatch: any): Promise<any> => {
     return request(api.getTagList).then(data => {
       dispatch(actionCreators.getTagList(data.content));
     });
@@ -60,7 +59,7 @@ export const getTagList = (): any => {
  * @returns
  */
 export const getArticleById = (id: number): any => {
-  return (dispatch: Dispatch) => {
+  return (dispatch: any) => {
     request(api.getArticleById, {
       method: "post",
       body: qs.stringify({ id })
@@ -74,7 +73,7 @@ export const getArticleById = (id: number): any => {
  * @description 根据tagid获取列表
  */
 export const getArticleByTag = (id: number): any => {
-  return (dispatch: Dispatch) => {
+  return (dispatch: any) => {
     request(api.getArticleByTag, {
       method: "post",
       body: qs.stringify({ id })
@@ -116,7 +115,7 @@ export const regist = (userInfo: any) => {
  * @returns {Object} data
  */
 export const login = (userInfo: any): any => {
-  return (dispatch: Dispatch) => {
+  return (dispatch: any) => {
     return request(api.login, {
       method: "POST",
       body: qs.stringify(userInfo)
@@ -133,7 +132,7 @@ export const login = (userInfo: any): any => {
  */
 export const logOut = (): any => {
   localStorage.removeItem("token");
-  return (dispatch: Dispatch) => {
+  return (dispatch: any) => {
     dispatch(actionCreators.saveUserInfo(null));
   };
 };

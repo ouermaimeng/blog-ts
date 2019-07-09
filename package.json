@@ -5,6 +5,7 @@
     "@babel/core": "7.2.2",
     "@svgr/webpack": "4.1.0",
     "@types/history": "^4.7.2",
+    "@types/http-proxy-middleware": "^0.19.2",
     "@types/jest": "24.0.4",
     "@types/node": "^11.9.3",
     "@types/react": "16.8.3",
@@ -38,6 +39,7 @@
     "highlight.js": "^9.14.2",
     "history": "^4.7.2",
     "html-webpack-plugin": "4.0.0-alpha.2",
+    "http-proxy-middleware": "^0.19.1",
     "identity-obj-proxy": "3.0.0",
     "jest": "23.6.0",
     "jest-pnp-resolver": "1.0.2",
@@ -148,6 +150,5 @@
     "presets": [
       "react-app"
     ]
-  },
-  "proxy": "http://192.168.6.252:80/"
+  }
 }

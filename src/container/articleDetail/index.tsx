@@ -2,7 +2,7 @@
  * @Author: wangcaowei
  * @Date: 2018-02-07 17:37:39
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-04 10:10:18
+ * @Last Modified time: 2019-07-09 16:59:36
  */
 import * as React from "react";
 import { connect } from "react-redux";
@@ -12,16 +12,8 @@ import { Tag } from "antd";
 import { Location, History } from "history";
 import { Dispatch } from "redux";
 import * as qs from "qs";
-import {
-  getArticleList,
-  getArticleById,
-  showDelete
-} from "../../actions/action";
-import {
-  ArticleAndTag,
-  ArticleList,
-  UserInfo
-} from "../../../interface/interface";
+import { getArticleList, getArticleById, showDelete } from "../../actions/action";
+import { ArticleAndTag, ArticleList, UserInfo } from "../../../interface/interface";
 import style from "./index.module.scss";
 
 interface Props {
@@ -57,7 +49,7 @@ class ArticleDetail extends React.Component<Props, {}> {
     history.push({
       pathname: "/write-article",
       search: qs.stringify({
-        article: article.id
+        id: article.id
       })
     });
   };
@@ -67,11 +59,7 @@ class ArticleDetail extends React.Component<Props, {}> {
     const tags =
       article.tags &&
       article.tags.map(tag => (
-        <Tag
-          color="blue"
-          key={tag.id}
-          onClick={this.getArticleByTagId.bind(this, tag.id)}
-        >
+        <Tag color="blue" key={tag.id} onClick={this.getArticleByTagId.bind(this, tag.id)}>
           {tag.tag}
         </Tag>
       ));
@@ -81,16 +69,7 @@ class ArticleDetail extends React.Component<Props, {}> {
         <div className={`${style.articleInfo} blog-flex blog-flex-justify`}>
           <div>{tags}</div>
           <div>
-            <span>
-              {" "}
-              创建日期: {new Date(article.createTime).toLocaleDateString()}{" "}
-            </span>{" "}
-            <span>
-              {" "}
-              修改日期 : {new Date(
-                article.updateTime
-              ).toLocaleDateString()}{" "}
-            </span>
+            <span> 创建日期: {new Date(article.createTime).toLocaleDateString()} </span> <span> 修改日期 : {new Date(article.updateTime).toLocaleDateString()} </span>
           </div>
         </div>
         <div
@@ -99,22 +78,14 @@ class ArticleDetail extends React.Component<Props, {}> {
             __html: md.render(article.content)
           }}
         />
-        <EditAndDel
-          editArticle={this.editArticle}
-          showDelete={this.deleteArticle}
-          user={user}
-        />
+        <EditAndDel editArticle={this.editArticle} showDelete={this.deleteArticle} user={user} />
       </div>
     ) : (
       <div>加载中...</div>
     );
   }
 }
-const mapStateToProps = (state: {
-  publishArticle: { editorValue: any };
-  article: { currentArticle: any };
-  user: { user: any };
-}) => {
+const mapStateToProps = (state: { publishArticle: { editorValue: any }; article: { currentArticle: any }; user: { user: any } }) => {
   return {
     article: state.article.currentArticle,
     editorValue: state.publishArticle.editorValue,

@@ -2,14 +2,14 @@
  * @Author: wangcaowei
  * @Date: 2019-01-23 16:26:35
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-05 11:40:31
+ * @Last Modified time: 2019-07-09 16:41:20
  */
 
 import status from "../server/config/status";
 
 //  response of interface
 export interface Response<T> {
-  readonly status: status;
+  status: status;
   content?: T | null;
   msg?: string;
 }

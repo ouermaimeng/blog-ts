@@ -2,26 +2,17 @@
  * @Author: wangcaowei
  * @Date: 2017-08-18 16:58:14
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-04 14:03:39
+ * @Last Modified time: 2019-07-09 17:10:55
  */
 import * as React from "react";
 import { ChangeEvent, MouseEvent } from "react";
 import { connect } from "react-redux";
 import { Row, Col, Input, Button, Select } from "antd";
 import * as qs from "qs";
-import {
-  publishArticle,
-  getTagList,
-  getArticleById
-} from "../../actions/action";
+import { publishArticle, getTagList, getArticleById } from "../../actions/action";
 import md from "../../config/markdownConfig";
 import { History } from "history";
-import {
-  TagsAttribute,
-  ArticleAndTag,
-  InsertArticle,
-  UserInfo
-} from "../../../interface/interface";
+import { TagsAttribute, ArticleAndTag, InsertArticle, UserInfo, Response, ArticlesAttribute } from "../../../interface/interface";
 import { Dispatch } from "redux";
 import style from "./index.module.scss";
 
@@ -62,14 +53,14 @@ class NewArticle extends React.Component<Props, States> {
   componentDidMount() {
     const { history, tagList, getTagList } = this.props;
     const { search } = history.location;
-    const parseSearch = qs.parse(search);
+    const parseSearch = qs.parse(search, { ignoreQueryPrefix: true });
     !tagList.length && getTagList();
-
+    console.log(parseSearch);
     parseSearch && this.initByEdit(parseSearch.id);
   }
   initByEdit = async (id: number): Promise<void> => {
     const res = await this.props.getArticleById(id);
-    console.log(res.a);
+    console.log(res);
   };
   // 编辑状态e为string 否则为event
   titleChange = (e: ChangeEvent<HTMLInputElement> | string) => {
@@ -150,11 +141,7 @@ class NewArticle extends React.Component<Props, States> {
         <div className={style.editWrap}>
           <Row className={style.textBody}>
             <Col span={12}>
-              <TextArea
-                rows={20}
-                value={this.state.content}
-                onChange={this.textareaChange}
-              />
+              <TextArea rows={20} value={this.state.content} onChange={this.textareaChange} />
             </Col>
             <Col span={12}>
               <div
@@ -167,12 +154,7 @@ class NewArticle extends React.Component<Props, States> {
           </Row>
         </div>
         <div className={style.publishBtn}>
-          <Button
-            type="primary"
-            disabled={button}
-            icon="check-circle-o"
-            onClick={this.submitArticle}
-          >
+          <Button type="primary" disabled={button} icon="check-circle-o" onClick={this.submitArticle}>
             发布
           </Button>
         </div>
@@ -180,16 +162,13 @@ class NewArticle extends React.Component<Props, States> {
     );
   }
 }
-const mapStateToProps = (state: {
-  publishArticle: { tagList: any };
-  user: { user: any };
-}) => {
-  return { tagList: state.publishArticle.tagList, userInfo: state.user.user };
+const mapStateToProps = (state: any) => {
+  return { tagList: state.publishArticle.tagList, userInfo: state.user.user, currentArticle: state.article.currentArticle };
 };
 const mapDispatchToProps = (dispatch: Dispatch) => {
   return {
     getTagList: (): Promise<[]> => dispatch(getTagList()),
-    getArticleById: (id: number): Promise<any> => dispatch(getArticleById(id))
+    getArticleById: (id: number): Promise<Response<Array<ArticleAndTag>>> => dispatch(getArticleById(id))
   };
 };
 export default connect(

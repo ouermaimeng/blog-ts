@@ -2,7 +2,7 @@
  * @Author: wangcaowei
  * @Date: 2018-02-07 18:32:16
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-03 17:09:09
+ * @Last Modified time: 2019-07-09 16:35:48
  */
 import * as React from "react";
 import * as ReactCSSTransitionGroup from "react-addons-css-transition-group";
@@ -11,12 +11,8 @@ import asyncComponent from "../bundle.js";
 
 const Index = asyncComponent(() => import("../container/index/index"));
 const Rightcontent = asyncComponent(() => import("../container/page"));
-const NewArticle = asyncComponent(() =>
-  import("../container/newArticle/newArticle")
-);
-const ArticleDetail = asyncComponent(() =>
-  import("../container/articleDetail/index")
-);
+const NewArticle = asyncComponent(() => import("../container/newArticle/newArticle"));
+const ArticleDetail = asyncComponent(() => import("../container/articleDetail/index"));
 
 export default () => (
   <Router>
@@ -26,21 +22,13 @@ export default () => (
                 transitionLeaveTimeout={500}
             > */}
     <Switch>
-      <Route
-        path="/write-article/:articleId"
-        exact={true}
-        component={NewArticle}
-      />
+      <Route path="/write-article" exact={true} component={NewArticle} />
       <Route
         path="/"
         render={() => (
           <Index>
             <Route exact={true} path="/" component={Rightcontent} />
-            <Route
-              exact={true}
-              path="/article-detail"
-              component={ArticleDetail}
-            />
+            <Route exact={true} path="/article-detail" component={ArticleDetail} />
           </Index>
         )}
       />

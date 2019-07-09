@@ -1,8 +1,8 @@
 /*
  * @Author: wangcaowei
  * @Date: 2019-07-05 10:44:09
- * @Last Modified by:   wangcaowei
- * @Last Modified time: 2019-07-05 10:44:09
+ * @Last Modified by: wangcaowei
+ * @Last Modified time: 2019-07-09 17:17:15
  */
 import { actionTypes } from "./type";
 
