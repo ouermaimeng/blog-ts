@@ -2,20 +2,15 @@
  * @Author: wangcaowei
  * @Date: 2017-08-18 11:23:10
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-09 17:19:00
+ * @Last Modified time: 2019-07-10 17:14:14
  */
 import { actionTypes } from "../actions/type";
-import { ArticleAndTag, ArticlesAttribute } from "../../interface/interface";
 import { AnyAction } from "redux";
-
-interface Article {
-  articleList: Array<ArticleAndTag>;
-  currentArticle: ArticlesAttribute | {};
-}
+import { Article } from "./reduce.interface";
 
 const initState: Article = {
   articleList: [],
-  currentArticle: {}
+  currentArticle: null
 };
 
 const article = (state = initState, action: AnyAction): Article => {

@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "dependencies": {
     "@babel/core": "7.2.2",
+    "@babel/plugin-proposal-optional-chaining": "^7.2.0",
     "@svgr/webpack": "4.1.0",
     "@types/history": "^4.7.2",
     "@types/http-proxy-middleware": "^0.19.2",
@@ -149,6 +150,9 @@
   "babel": {
     "presets": [
       "react-app"
+    ],
+    "plugins": [
+      "@babel/plugin-proposal-optional-chaining"
     ]
   }
 }

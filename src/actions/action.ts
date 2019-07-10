@@ -2,13 +2,16 @@
  * @Author: wangcaowei
  * @Date: 2017-08-18 12:58:58
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-09 14:50:04
+ * @Last Modified time: 2019-07-10 17:02:05
  */
 import api from "../config/api";
 import * as actionCreators from "./actionCreator";
 import * as qs from "qs";
 import request from "../request";
 import * as interfaces from "../../interface/interface";
+import { ThunkAction, ThunkDispatch } from "redux-thunk";
+import { AnyAction } from "redux";
+import { Action } from "history";
 /**
  *
  * 发表文章
@@ -27,9 +30,9 @@ export const publishArticle = (article: interfaces.InsertArticle) => {
  * 获取tag对应的文章列表
  * @returns
  */
-export const getArticleList = (tagId?: number): any => {
-  return (dispatch: any) => {
-    request(api.getArticleList, {
+export const getArticleList = (tagId?: number): ThunkAction<Promise<void>, {}, {}, AnyAction> => {
+  return (dispatch: ThunkDispatch<{}, {}, AnyAction>): Promise<void> => {
+    return request(api.getArticleList, {
       method: "post",
       body: qs.stringify({ tagId })
     }).then(data => {
@@ -58,9 +61,9 @@ export const getTagList = (): any => {
  * @param
  * @returns
  */
-export const getArticleById = (id: number): any => {
-  return (dispatch: any) => {
-    request(api.getArticleById, {
+export const getArticleById = (id: number): ThunkAction<Promise<void>, {}, {}, AnyAction> => {
+  return (dispatch: ThunkDispatch<{}, {}, AnyAction>): Promise<void> => {
+    return request(api.getArticleById, {
       method: "post",
       body: qs.stringify({ id })
     }).then(data => {
@@ -152,7 +155,7 @@ export const getVerifyCode = () => {
  * @function 显示隐藏删除弹窗
  * @param {*} id 删除文章的id
  */
-export const showDelete = (id?: number): any => {
+export const showDelete = (id?: number): AnyAction => {
   return {
     type: "SHOW_DELETE",
     delete: {

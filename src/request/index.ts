@@ -1,11 +1,11 @@
 import { message } from "antd";
-
+import { Response } from "../../interface/interface";
 /**
  * @function 简单的封装
  * @param {string} url
  * @param {Object} data 参数
  */
-const request = (url: string, data = {}) => {
+const request = (url: string, data = {}): Promise<Response<any>> => {
   return fetch(url, {
     headers: {
       "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",

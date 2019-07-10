@@ -2,7 +2,7 @@
  * @Author: wangcaowei
  * @Date: 2017-08-18 16:58:14
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-09 17:10:55
+ * @Last Modified time: 2019-07-10 16:29:56
  */
 import * as React from "react";
 import { ChangeEvent, MouseEvent } from "react";
@@ -11,41 +11,23 @@ import { Row, Col, Input, Button, Select } from "antd";
 import * as qs from "qs";
 import { publishArticle, getTagList, getArticleById } from "../../actions/action";
 import md from "../../config/markdownConfig";
-import { History } from "history";
-import { TagsAttribute, ArticleAndTag, InsertArticle, UserInfo, Response, ArticlesAttribute } from "../../../interface/interface";
-import { Dispatch } from "redux";
+import { AnyAction } from "redux";
+import { globalState } from "../../reducers/reduce.interface";
 import style from "./index.module.scss";
+import { ThunkDispatch } from "redux-thunk";
+import { Props, States, MapDispatchProps, MapStateProps } from "./interface";
 
 const { TextArea } = Input;
-
-interface Props {
-  history: History;
-  tagList: TagsAttribute[];
-  userInfo: UserInfo;
-  getTagList: () => Promise<any>;
-  getArticleById: (id: number) => Promise<any>;
-}
-interface States {
-  id: number | string;
-  title: string; // 标题
-  abstract: string; // 摘要
-  tags: any[]; // 对应的tag
-  content: string; // markdown
-  button: boolean; // 是否能够提交
-  html: string; // markdown => html
-}
 
 class NewArticle extends React.Component<Props, States> {
   constructor(props: Props) {
     super(props);
-    const { state } = props.history.location;
-    const article: ArticleAndTag = state && state.article;
     this.state = {
-      id: article ? article.id : -1,
-      title: article ? article.title : "",
-      abstract: article ? article.abstract : "",
-      tags: article ? article.tags.map(ele => ele.id) : [],
-      content: article ? article.content : "",
+      id: null,
+      title: "",
+      abstract: "",
+      tags: [],
+      content: "",
       button: true, // 是否禁用按钮
       html: ""
     };
@@ -55,7 +37,6 @@ class NewArticle extends React.Component<Props, States> {
     const { search } = history.location;
     const parseSearch = qs.parse(search, { ignoreQueryPrefix: true });
     !tagList.length && getTagList();
-    console.log(parseSearch);
     parseSearch && this.initByEdit(parseSearch.id);
   }
   initByEdit = async (id: number): Promise<void> => {
@@ -70,15 +51,16 @@ class NewArticle extends React.Component<Props, States> {
   submitArticle = (e: MouseEvent): void => {
     e.preventDefault();
     const { id, title, content, abstract, tags } = this.state;
-    const data: InsertArticle = {
-      id: +id,
+    const { userInfo, history } = this.props;
+    const data = {
+      id,
       title,
       content,
       abstract,
       tags,
-      userid: this.props.userInfo.id
+      userid: userInfo && userInfo.id
     };
-    publishArticle(data).then(() => this.props.history.push("/"));
+    publishArticle(data).then(() => history.push("/"));
   };
   selectChange = (val: number[]) => {
     this.setState({
@@ -162,13 +144,13 @@ class NewArticle extends React.Component<Props, States> {
     );
   }
 }
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: globalState): MapStateProps => {
   return { tagList: state.publishArticle.tagList, userInfo: state.user.user, currentArticle: state.article.currentArticle };
 };
-const mapDispatchToProps = (dispatch: Dispatch) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, AnyAction>): MapDispatchProps => {
   return {
-    getTagList: (): Promise<[]> => dispatch(getTagList()),
-    getArticleById: (id: number): Promise<Response<Array<ArticleAndTag>>> => dispatch(getArticleById(id))
+    getTagList: (): Promise<void> => dispatch(getTagList()),
+    getArticleById: (id: number): Promise<void> => dispatch(getArticleById(id))
   };
 };
 export default connect(

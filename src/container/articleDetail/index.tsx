@@ -2,38 +2,28 @@
  * @Author: wangcaowei
  * @Date: 2018-02-07 17:37:39
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-09 16:59:36
+ * @Last Modified time: 2019-07-10 16:56:55
  */
 import * as React from "react";
 import { connect } from "react-redux";
 import md from "../../config/markdownConfig";
 import EditAndDel from "./editanddel";
 import { Tag } from "antd";
-import { Location, History } from "history";
-import { Dispatch } from "redux";
+import { AnyAction } from "redux";
 import * as qs from "qs";
 import { getArticleList, getArticleById, showDelete } from "../../actions/action";
-import { ArticleAndTag, ArticleList, UserInfo } from "../../../interface/interface";
 import style from "./index.module.scss";
-
-interface Props {
-  getArticleById: (id: number) => ArticleAndTag;
-  getArticleList: (tagId: number) => ArticleList;
-  showDelete: (id: number) => any;
-  location: Location;
-  history: History;
-  article: ArticleAndTag;
-  user: UserInfo | null;
-}
+import { ThunkDispatch } from "redux-thunk";
+import { globalState } from "../../reducers/reduce.interface";
+import { Props } from "./interface";
 
 class ArticleDetail extends React.Component<Props, {}> {
   constructor(props: Props) {
     super(props);
   }
-
   componentDidMount() {
-    const { location, getArticleById } = this.props;
-    const search = qs.parse(location.search, { ignoreQueryPrefix: true });
+    const { history, getArticleById } = this.props;
+    const search = qs.parse(history.location.search, { ignoreQueryPrefix: true });
     getArticleById(search.id);
   }
 
@@ -41,15 +31,15 @@ class ArticleDetail extends React.Component<Props, {}> {
     this.props.getArticleList(tagId);
     this.props.history.push("/");
   }
-  deleteArticle = () => {
-    this.props.showDelete(this.props.article.id);
+  deleteArticle = (id: number) => {
+    this.props.showDelete(id);
   };
-  editArticle = () => {
+  editArticle = (id: number) => {
     const { history, article } = this.props;
     history.push({
       pathname: "/write-article",
       search: qs.stringify({
-        id: article.id
+        id
       })
     });
   };
@@ -57,13 +47,13 @@ class ArticleDetail extends React.Component<Props, {}> {
   render() {
     const { article, user } = this.props;
     const tags =
-      article.tags &&
+      article &&
       article.tags.map(tag => (
         <Tag color="blue" key={tag.id} onClick={this.getArticleByTagId.bind(this, tag.id)}>
           {tag.tag}
         </Tag>
       ));
-    return Object.keys(article).length ? (
+    return article ? (
       <div className={style.articleDetail}>
         <h1>{article.title}</h1>
         <div className={`${style.articleInfo} blog-flex blog-flex-justify`}>
@@ -78,24 +68,23 @@ class ArticleDetail extends React.Component<Props, {}> {
             __html: md.render(article.content)
           }}
         />
-        <EditAndDel editArticle={this.editArticle} showDelete={this.deleteArticle} user={user} />
+        <EditAndDel articleId={article.id} editArticle={this.editArticle} showDelete={this.deleteArticle} user={user} />
       </div>
     ) : (
       <div>加载中...</div>
     );
   }
 }
-const mapStateToProps = (state: { publishArticle: { editorValue: any }; article: { currentArticle: any }; user: { user: any } }) => {
+const mapStateToProps = (state: globalState) => {
   return {
     article: state.article.currentArticle,
-    editorValue: state.publishArticle.editorValue,
     user: state.user.user
   };
 };
-const mapDispatchToProps = (dispatch: Dispatch) => {
+const mapDispatchToProps = (dispatch: ThunkDispatch<{}, {}, AnyAction>) => {
   return {
-    getArticleById: (id: number) => dispatch(getArticleById(id)),
-    getArticleList: (tagId: number) => dispatch(getArticleList(tagId)),
+    getArticleById: (id: number): Promise<void> => dispatch(getArticleById(id)),
+    getArticleList: (tagId: number): Promise<void> => dispatch(getArticleList(tagId)),
     showDelete: (id: number) => dispatch(showDelete(id))
   };
 };
