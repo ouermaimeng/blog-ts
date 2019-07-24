@@ -7,8 +7,8 @@ node_modules/
 dist/
 
 # local config
-server/config/config.ts
-server/config/config.js
+.vscode
+server/config/config.*
 /.pnp
 .pnp.js
 
