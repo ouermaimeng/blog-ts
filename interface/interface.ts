@@ -2,7 +2,7 @@
  * @Author: wangcaowei
  * @Date: 2019-01-23 16:26:35
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-10 16:11:58
+ * @Last Modified time: 2019-07-24 14:10:32
  */
 
 import status from "../server/config/status";
@@ -56,12 +56,12 @@ export interface ArticleList extends Array<ArticleAndTag> {}
 
 // add article
 export interface InsertArticle {
-  id: number | null;
+  id?: number;
   title: string;
   content: string;
   abstract: string;
   tags: number[];
-  userid: number | null;
+  userid: number;
   // [key: string]: string | number | number[];
 }
 

@@ -4,18 +4,18 @@ import * as sequelize from 'sequelize';
 import * as def from './db';
 
 export interface ITables {
-  articles:def.articlesModel;
   articletagrelate:def.articletagrelateModel;
-  tags:def.tagsModel;
+  articles:def.articlesModel;
   users:def.usersModel;
+  tags:def.tagsModel;
 }
 
 export const getModels = function(seq:sequelize.Sequelize):ITables {
   const tables:ITables = {
-    articles: seq.import(path.join(__dirname, './articles')),
     articletagrelate: seq.import(path.join(__dirname, './articletagrelate')),
-    tags: seq.import(path.join(__dirname, './tags')),
+    articles: seq.import(path.join(__dirname, './articles')),
     users: seq.import(path.join(__dirname, './users')),
+    tags: seq.import(path.join(__dirname, './tags')),
   };
   return tables;
 };

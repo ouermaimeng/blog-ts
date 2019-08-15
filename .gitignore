@@ -13,6 +13,7 @@ server/config/config.*
 .pnp.js
 
 # testing
+localTest
 /coverage
 
 # production

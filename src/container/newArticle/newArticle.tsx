@@ -2,7 +2,7 @@
  * @Author: wangcaowei
  * @Date: 2017-08-18 16:58:14
  * @Last Modified by: wangcaowei
- * @Last Modified time: 2019-07-10 16:29:56
+ * @Last Modified time: 2019-07-24 14:54:34
  */
 import * as React from "react";
 import { ChangeEvent, MouseEvent } from "react";
@@ -16,6 +16,7 @@ import { globalState } from "../../reducers/reduce.interface";
 import style from "./index.module.scss";
 import { ThunkDispatch } from "redux-thunk";
 import { Props, States, MapDispatchProps, MapStateProps } from "./interface";
+import { InsertArticle } from "../../../interface/interface";
 
 const { TextArea } = Input;
 
@@ -52,14 +53,15 @@ class NewArticle extends React.Component<Props, States> {
     e.preventDefault();
     const { id, title, content, abstract, tags } = this.state;
     const { userInfo, history } = this.props;
-    const data = {
-      id,
+    const data: InsertArticle = {
+      // id:Number(id),
       title,
       content,
       abstract,
       tags,
-      userid: userInfo && userInfo.id
+      userid: userInfo!.id
     };
+    id && (data.id = id);
     publishArticle(data).then(() => history.push("/"));
   };
   selectChange = (val: number[]) => {
