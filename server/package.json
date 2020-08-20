@@ -25,7 +25,7 @@
     "@types/koa-router": "^7.0.37",
     "@types/koa-session": "^5.7.4",
     "@types/koa-static": "^4.0.0",
-    "bcrypt": "^3.0.4",
+    "bcrypt": "^5.0.0",
     "global": "^4.3.2",
     "ip": "^1.1.5",
     "jsonwebtoken": "^8.2.0",
